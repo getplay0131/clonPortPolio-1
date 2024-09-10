@@ -1,0 +1,168 @@
+<!-- 참고 영상 :  
+YouTube
+How to Make A Portfolio Website using HTML CSS & JavaScript | Complete Responsive Portfolio - Sanika Coder-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형 포트폴리오 제작 연습</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- font awesome 삽입 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- google fonts 삽입 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <a href="#" class="logo">윤승현</a>
+        <i class="fa-solid fa-bars" id="menu-icon"></i>
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#service">Services</a>
+            <a href="#education">Education</a>
+            <a href="#contract">contract</a>
+        </nav>
+    </header>
+    <section class="home" id="home">
+        <div class="home-img">
+            <img src="images/self1.jpg" alt="">
+        </div>
+        <div class="home-content">
+            <h1>감사합니다! 저는 윤승현입니다.</h1>
+            <h3 data-text="student">student</h3>
+            <p>저는 프로그래밍 공부를 시작한지 얼마 되진 않았지만, 꾸준한 열정과 성실함을 무기로 지속적인 발전을 하는 중입니다.</p>
+
+            <div class="home-btn">
+                <a href="" class="btn">고용해보세요!</a>
+                <a href="" class="btn btn2">프로젝트 작업 내역</a>
+            </div>
+            <div class="social-icon">
+                <a href=""><i class="fa-solid fa-envelope"></i></a>
+                <a href=""><i class="fa-brands fa-github"></i></a>
+                <a href=""><i class="fa-solid fa-phone"></i></a>
+                <a href=""><i class="fa-solid fa-comment"></i></a>
+            </div>
+            <div class="about" id="about">
+                <div class="about-img">
+                    <img src="#" alt="">
+                </div>
+                <div class="about-content">
+                    <h1 class="heading"><span>저에 대해</span> 소개합니다.</h1>
+                    <h2>Web student</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, commodi fugit eveniet
+                        similique cupiditate assumenda ratione ?</p>
+                    <div class="about btn">
+                        <a href="#" class="btn">연락 방법</a>
+                    </div>
+                    <div class="social-icon">
+                        <a href=""><i class="fa-solid fa-envelope"></i></a>
+                        <a href=""><i class="fa-brands fa-github"></i></a>
+                        <a href=""><i class="fa-solid fa-blog"></i></a>
+                        <a href=""><i class="fa-solid fa-comment"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="service" id="service">
+        <h2 class="heading">Services</h2>
+        <div class="service-container">
+            <div class="service-box">
+                <div class="service-icon">
+                    <span><i class="fa-solid fa-globe"></i></span>
+                </div>
+                <div class="service-content">
+                    <h1 class="service-title">Soon Web Development</h1>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet, dolores!</p>
+                    <a href="#">더 보기</a>
+
+                </div>
+            </div>
+            <div class="service-box">
+                <div class="service-icon">
+                    <span><i class="fa-solid fa-bowl-food"></i></i></span>
+                </div>
+                <div class="service-content">
+                    <h1 class="service-title">restraunt manager</h1>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet, dolores!</p>
+                    <a href="#">더 보기</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="education" id="education">
+        <h2 class="heading">교육</h2>
+        <div class="timeline">
+            <div class="container right">
+                <div class="content">
+                    <div class="tag">
+                        <h2>High school</h2>
+                    </div>
+                    <div class="desc">
+                        <p>Lorem ipsum dolor sit amet.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="container left">
+                <div class="content">
+                    <div class="tag">
+                        <h2>Middle school</h2>
+                    </div>
+                    <div class="desc">
+                        <p>Lorem ipsum dolor sit amet.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="container right">
+                <div class="content">
+                    <div class="tag">
+                        <h2>High school</h2>
+                    </div>
+                    <div class="desc">
+                        <p>Lorem ipsum dolor sit amet.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="container left">
+                <div class="content">
+                    <div class="tag">
+                        <h2>Middle school</h2>
+                    </div>
+                    <div class="desc">
+                        <p>Lorem ipsum dolor sit amet.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer" id="contract">
+        <div class="social-icon">
+            <a href=""><i class="fa-solid fa-envelope"></i></a>
+            <a href=""><i class="fa-brands fa-github"></i></a>
+            <a href=""><i class="fa-solid fa-blog"></i></a>
+            <a href=""><i class="fa-solid fa-comment"></i></a>
+        </div>
+        <ul class="list">
+            <li><a href="#">문의사항</a></li>
+            <li><a href="#">추가 정보</a></li>
+            <li><a href="#">가능한 작업</a></li>
+            <li><a href="#">연락</a></li>
+            <li><a href="#">개인 정보 보호 정책</a></li>
+        </ul>
+        <p class="copyright">
+            Sanika Coder 코드 클론코딩 | All Right Reserved
+        </p>
+    </footer>
+</body>
+<script src="js/script.js"></script>
+
+</html>

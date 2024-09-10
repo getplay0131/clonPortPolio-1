@@ -1,0 +1,724 @@
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap");
+
+.jua-regular {
+  font-family: "Jua", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  /* 
+border와 outline의 주요 차이점:
+
+1. 공간 차지:
+   - border: 요소의 공간을 차지함
+   - outline: 공간을 차지하지 않음 (요소 위에 표시됨)
+
+2. 스타일링:
+   - border: 각 모서리에 개별 스타일 적용 가능
+   - outline: 전체적으로 균일한 스타일만 가능
+
+3. 레이아웃 영향:
+   - border: 요소의 크기와 위치에 영향을 줌
+   - outline: 요소의 크기나 위치에 영향 없음
+
+4. 주의사항:
+   - outline: 다른 요소와 겹칠 수 있음
+
+용도에 따라 적절한 속성을 선택하여 사용하는 것이 중요함
+*/
+  scroll-behavior: smooth;
+  /* 스크롤 효과 */
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --bg-color: #080808;
+  --second-bg-color: #131313;
+  --text-color: #fff;
+  --main-color: #f2c704;
+}
+
+html {
+  font-size: 1.5rem;
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--bg-color);
+  font-family: "Poppins", sans-serif;
+  color: var(--text-color);
+}
+
+html::-webkit-scrollbar {
+  width: 0.8rem;
+}
+
+html::-webkit-scrollbar-track {
+  /* 스크롤바 막대가 움직이는 영역 뒷 배경을 꾸민다. */
+  background: var(--bg-color);
+}
+
+html::-webkit-scrollbar-thumb {
+  background: var(--main-color);
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 3rem 9%;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(20px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 3rem;
+  color: var(--main-color);
+  font-family: 800;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+  text-shadow: 0 0 15px var(--main-color);
+}
+
+.logo:hover {
+  transform: scale(1.1);
+}
+
+.navbar a {
+  font-size: 1.8rem;
+  color: var(--text-color);
+  margin-left: 4rem;
+  font-weight: 500;
+  border-bottom: 3px solid transparent;
+  transition: 0.3s ease;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  color: var(--main-color);
+  border-bottom: 3px solid var(--main-color);
+  text-shadow: 0 0 10px var(--main-color);
+}
+
+#menu-icon {
+  font-size: 3.6rem;
+  color: var(--main-color);
+  display: none;
+}
+
+/* 홈 */
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  grid-area: 1rem;
+}
+.home-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.home-img {
+  border-radius: 50%;
+  margin-top: 4.5rem;
+}
+
+.home-img img {
+  position: relative;
+  border-radius: 50%;
+  top: 3rem;
+  width: 32vw;
+  box-shadow: 0 0 10px var(--main-color), 0 0 25px var(--main-color);
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.home-img img:hover {
+  box-shadow: 0 0 10px var(--main-color), 0 0 15px var(--main-color),
+    0 0 45px var(--main-color);
+  transform: scale(1.05);
+}
+
+.home-content h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  line-height: 1;
+}
+
+.home-content h3 {
+  position: relative;
+  font-size: 3.5rem;
+  color: transparent;
+  -webkit-text-stroke: #252839;
+  text-transform: uppercase;
+  font-family: "Jua", sans-serif;
+}
+.home-content h3::before {
+  content: attr(data-text);
+  /* 생성한 값으로 요소를 대체 : 문자열로 변환한, 요소 속성의 값. 해당 속성이 존재하지 않으면 빈 문자열을 반환한다. */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  color: #ca0b0b;
+  -webkit-text-stroke: 1px #ca0b0b;
+  border-right: 2px solid var(--main-color);
+  overflow: hidden;
+  white-space: nowrap;
+  animation: animate 5s linear infinite;
+}
+
+.home-content p {
+  font-size: 1.5rem;
+  font-weight: 500;
+  max-width: 1000px;
+}
+
+.home-content .social-icon a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  color: var(--main-color);
+  margin: 3rem 1.5rem 3rem 0;
+  transition: 0.5s ease-in-out;
+}
+.home-content .social-icon a:hover {
+  transform: scale(1.3) translateY(-15px);
+  text-shadow: 0 0 25px var(--main-color);
+}
+
+/* 버튼 */
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  margin: 0.5em;
+  background: var(--main-color);
+  color: #000;
+  border: none;
+  font-size: 20px;
+  border-radius: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: color 0.3s ease;
+}
+
+.btn2 {
+  background: #000;
+  color: var(--main-color);
+  border: 1px solid var(--main-color);
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  color: var(--text-color);
+  border: 1px solid var(--main-color);
+  box-shadow: 0 0 15px var(--main-color);
+}
+
+.btn2:hover {
+  color: var(--bg-color);
+  border: 1px solid var(--main-color);
+  box-shadow: 0 0 15px var(--main-color);
+}
+
+.btn::after {
+  content: "";
+  background: #000;
+  position: absolute;
+  z-index: -1;
+  left: -20%;
+  right: -20%;
+  top: 0;
+  bottom: 0;
+  transform: skewX(-45deg) scale(0, 1);
+  /* skew는 항상 2d변환이고 요소를 기울이고, rotate는 2d,3d 모두 가능하고 요소를 회전시킨다.*/
+  transition: all 0.5s;
+}
+
+.btn2::after {
+  background: var(--main-color);
+}
+
+.btn:hover::after {
+  transform: skewX(-45deg) scale(1, 1);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+/* about */
+section {
+  min-height: 100vh;
+  padding: 5rem 9% 5rem;
+}
+
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8rem;
+  background-color: var(--second-bg-color);
+}
+
+.about-img img {
+  position: relative;
+  width: 32vw;
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--main-color), 0 0 15px var(--main-color),
+    0 0 45px var(--main-color);
+}
+
+.about-img img:hover {
+  box-shadow: 0 0 10px var(--main-color), 0 0 15px var(--main-color),
+    0 0 45px var(--main-color);
+  transform: scale(1.01);
+}
+
+.about-content h1.heading {
+  font-size: 7rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.about-content h1.heading span {
+  color: var(--main-color);
+}
+
+.about-content h2 {
+  font-size: 3rem;
+  margin-top: 5rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.about-content p {
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin-top: 2rem;
+  line-height: 150%;
+}
+
+.about-content .social-icon a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  color: var(--main-color);
+  margin: 3rem 1.5rem 3rem 0;
+  transition: 0.3s ease;
+}
+
+.home-content .social-icon a:hover {
+  transform: scale(1.3) translateY(-5px);
+  text-shadow: 0 0 25px var(--main-color);
+}
+
+/* Service */
+.heading {
+  font-size: 6rem;
+  text-align: center;
+}
+
+.service {
+  background-color: var(--bg-color);
+}
+
+.service h2 {
+  margin-bottom: 8rem;
+}
+
+.service-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+  /* position: relative; */
+}
+
+.service-container .service-box {
+  flex: 1 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: var(--second-bg-color);
+  padding: 3rem 2rem 4rem;
+  height: 10%;
+  border-radius: 2rem;
+  border: 2px solid var(--main-color);
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: rgba(255, 208, 0, 0.445) 3px 3px 8px;
+}
+
+.service-container .service-box:hover {
+  transform: scale(1.02);
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+.service-box .service-icon i {
+  font-size: 7rem;
+  margin-bottom: 2rem;
+}
+
+.service-box:hover .service-content h1,
+.service-box:hover .service-icon i,
+.service-box:hover .service-icon p {
+  color: var(--main-color);
+}
+
+.service-box .service-content h1 {
+  font-size: 2.5rem;
+}
+
+.service-box .service-content p {
+  font-size: 1.4rem;
+  margin: 1rem 0 0;
+}
+
+.service-content a {
+  font-size: 1.5rem;
+  color: var(--main-color);
+  margin-top: 3rem;
+}
+
+.service-content a:hover {
+  color: #fff;
+  text-shadow: 0 0 25px var(--main-color);
+}
+
+/* education */
+
+.education {
+  background-color: var(--second-bg-color);
+  width: 100%;
+}
+
+.education .timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+
+.education .timeline::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  background: #706430ea;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+  z-index: 2;
+}
+
+.education .container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+/* 에듀케이션 원 마크  */
+.education .container::after {
+  content: "\f501";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: var(--bg-color);
+  border-radius: 50%;
+  border: 4px solid var(--main-color);
+  top: 15px;
+  z-index: 100;
+  border-radius: 50%;
+  font-size: 1.89rem;
+  text-align: center;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.1);
+  line-height: 25px;
+  font-family: "Font Awesome\ 5 Free";
+}
+
+.education .left {
+  left: 0;
+}
+
+.education .right {
+  left: 50%;
+}
+
+.education .left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid var(--main-color);
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent var(--main-color);
+}
+
+.education .right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 100;
+  left: 30px;
+  border: medium solid var(--main-color);
+  border-width: 10px 10px 10px 0;
+  border-color: transparent var(--main-color) transparent transparent;
+  /* background: #000; */
+}
+
+.education .right::after {
+  left: -16px;
+}
+
+.education .content {
+  background: var(--main-color);
+  position: relative;
+  border-radius: 6px;
+  padding: 20px 30px;
+  color: #000;
+}
+
+.education .content .tag {
+  font-size: 1.5rem;
+  padding-top: 1.5rem;
+  margin-left: 1.5rem;
+}
+
+.education.content .desc {
+  margin-left: 1.5rem;
+  padding-left: 1rem;
+}
+
+.education .content .tag h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+.education .content .desc p {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #000;
+}
+
+/* footer */
+.footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  padding: 40px 0;
+  background: var(--main-color);
+}
+
+.footer .social-icon {
+  text-align: center;
+  padding-bottom: 25px;
+  color: #000;
+}
+
+.footer .social-icon a {
+  font-size: 25px;
+  color: #000;
+  display: inline-block;
+  text-align: center;
+  margin: 0 10px;
+  transition: 0.3s ease;
+}
+
+.footer .social-icon a:hover {
+  transform: scale(1.2) translateY(-5px);
+  text-shadow: 0 0 15px var(--bg-color);
+}
+
+.footer ul {
+  margin-top: 0;
+  padding: 0;
+  font-size: 10px;
+  line-height: 1.6;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.footer ul li {
+  display: inline-block;
+  padding: 0 15px;
+}
+
+.footer ul li a {
+  color: #000;
+  border: 2px solid transparent;
+  transition: 0.3s ease;
+}
+
+.footer ul li a:hover {
+  border-bottom: 2px solid #000;
+}
+
+.footer .copyright {
+  margin-top: 50px;
+  text-align: center;
+  font-size: 16px;
+  color: #000;
+}
+
+/* 미디어쿼리 */
+@media (max-width: 1285px) {
+  html {
+    font-size: 55%;
+  }
+  .service-container {
+    padding-bottom: 7rem;
+    grid-template-columns: repeat(1, 1fr);
+    margin: 0 5rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  .about {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 995px) and (max-width: 991px) {
+  #menu-icon {
+    display: block;
+  }
+  .navbar {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 40%;
+    border-left: 3px solid var(--main-color);
+    border-bottom: 3px solid var(--main-color);
+    border-bottom-left-radius: 2rem;
+    /* 아래쪽 테두리의 좌측 모서리 조절 */
+    padding: 1rem 3%;
+    background-color: var(--second-bg-color);
+    border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+    display: none;
+  }
+  .navbar.active {
+    display: block;
+  }
+
+  .navbar a {
+    display: block;
+    font-size: 2rem;
+    margin: 3rem 0;
+  }
+
+  .navbar a:hover,
+  .navbar a:active {
+    padding: 1rem;
+    border-radius: 0.5rem;
+  }
+
+  .header {
+    padding: 2rem 3%;
+  }
+  section {
+    padding: 5rem 3% 2rem;
+  }
+  .service {
+    padding-bottom: 7rem;
+  }
+  .about {
+    flex-direction: column;
+    margin: 0rem 2rem;
+  }
+  .about-content h1.heading {
+    font-size: 5rem;
+    text-align: center;
+  }
+  .about-content h1 {
+    margin: 1rem 0;
+  }
+  .about-img {
+    text-align: center;
+  }
+
+  .about-img img {
+    width: 70vw;
+    margin-top: 4rem;
+  }
+  .footer {
+    padding: 2rem 3%;
+  }
+}
+
+@media (max-width: 895px) {
+  .home {
+    flex-direction: column;
+    margin: 5rem 4rem;
+  }
+  .home-content h1 {
+    font-size: 2.5rem;
+    margin-top: 3rem;
+  }
+  .home-content h3 {
+    font-size: 1.9rem;
+  }
+  .home-content p {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .home-img img {
+    width: 56vw;
+    margin-top: -2rem;
+  }
+  .home-btn .btn {
+    padding: 0.9rem 1.5rem;
+    margin: 0;
+    margin-left: 1rem;
+    font-size: 14px;
+  }
+}
+
+/* 키프레임 */
+@keyframes animate {
+  0%,
+  10%,
+  100% {
+    width: 0;
+  }
+  70%,
+  90% {
+    width: 100%;
+  }
+}
